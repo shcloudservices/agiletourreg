@@ -1,6 +1,6 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "name": "shcloudservices/agiletour-reg",
+    "description": "Herramienta de registro para el Agiletour",
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -22,7 +22,8 @@
 	"behat/mink": "1.4@stable",
 	"behat/symfony2-extension": "*",
 	"behat/mink-extension": "*",
-	"behat/mink-browserkit-driver": "*"
+	"behat/mink-browserkit-driver": "*",
+	"behat/mink-selenium2-driver":  "*"
     },
     "scripts": {
         "post-install-cmd": [
@@ -42,5 +43,7 @@
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web"
-    }
+    },
+    "minimum-stability": "dev",
+    "license": "MIT"
 }
