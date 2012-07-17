@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset="UTF-8" />
+        <title>Registro de Agile Tour 2012{% block title %}Registro de Agile Tour 2012{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+		<div class="navbar navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container-fluid">
+	          <a class="brand" href="#">Registro de Agile Tour 2012</a>
+	          {% block navbar %}{% endblock %}
+	        </div>
+	      </div>
+	    </div>
+        <div class="container-fluid">
+            {% block body %}{% endblock %}
+            <hr>
+            <footer>
+                <p>Desarrollado por <a href="http://solucioneshospedadas.com/">Soluciones Hospedadas</a></p>
+            </footer>  
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
