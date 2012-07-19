@@ -23,8 +23,28 @@
 	"behat/symfony2-extension": "*",
 	"behat/mink-extension": "*",
 	"behat/mink-browserkit-driver": "*",
-	"behat/mink-selenium2-driver":  "*"
+	"behat/mink-selenium2-driver":  "*",
+	"twitter/bootstrap": "2.0.*",
+	"friendsofsymfony/user-bundle": "*"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "version": "2.0.4",
+                "name": "twitter/bootstrap",
+                "source": {
+                    "url": "https://github.com/twitter/bootstrap.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "dist": {
+                    "url": "https://github.com/twitter/bootstrap/zipball/master",
+                    "type": "zip"
+                 }
+            }
+        }
+    ],
     "scripts": {
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
