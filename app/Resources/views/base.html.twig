@@ -3,7 +3,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset="UTF-8" />
         <title>Registro de Agile Tour 2012{% block title %}Registro de Agile Tour 2012{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet/less" type="text/css" href="{{ asset('css/agiletour.less') }}">
+        
+        {% block stylesheets %}
+	        
+        {% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
