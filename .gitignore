@@ -20,3 +20,4 @@ app/config/parameters.ini
 .project
 .settings/*
 
+nbproject/*
