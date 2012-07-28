@@ -23,6 +23,12 @@ class User extends BaseUser
      * @ORM\OneToMany(targetEntity="Presentation", mappedBy="speaker")
      */
     protected $presentations;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Pago")
+     * @ORM\JoinColumn(name="pago_id", referencedColumnName="id")
+     */
+    private $pago;
 
     public function __construct()
     {
