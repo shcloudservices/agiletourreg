@@ -17,3 +17,4 @@ app/config/parameters.ini
 .buildpath
 .project
 .settings/
+/nbproject/private/
