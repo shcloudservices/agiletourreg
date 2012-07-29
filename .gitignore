@@ -14,7 +14,9 @@ web/bundles/*
 
 # Configuration files
 app/config/parameters.ini
+
+#Eclipse files
 .buildpath
 .project
-.settings/
-/nbproject/private/
+.settings/*
+nbproject/*

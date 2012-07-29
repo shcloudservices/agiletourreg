@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="usuario")
  */
-class User extends BaseUser
+class Usuario extends BaseUser
 {
     /**
      * @ORM\Id
@@ -20,9 +20,16 @@ class User extends BaseUser
     protected $id;
     
     /**
-     * @ORM\OneToMany(targetEntity="Presentation", mappedBy="speaker")
+     * @ORM\OneToOne(targetEntity="Presentacion")
+     * @ORM\JoinColumn(name="presentacion_id", referencedColumnName="id")
      */
-    protected $presentations;
+    protected $presentacion;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Pago")
+     * @ORM\JoinColumn(name="pago_id", referencedColumnName="id")
+     */
+    private $pago;
 
     public function __construct()
     {
