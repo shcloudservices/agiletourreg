@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new SHCloud\Bundle\RegisterBundle\SHCloudRegisterBundle(),
             new FOS\UserBundle\FOSUserBundle(),
         	new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new SHCloud\Bundle\HomeBundle\SHCloudHomeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

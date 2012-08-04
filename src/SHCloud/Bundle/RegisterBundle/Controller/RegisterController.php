@@ -6,14 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class RegisterController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/ponente", name="registro_ponente")
      * @Template()
      */
-    public function indexAction($name)
+    public function registroPonenteAction()
     {
-        return array('name' => $name);
+        return array();
     }
 }

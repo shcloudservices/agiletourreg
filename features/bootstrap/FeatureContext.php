@@ -12,7 +12,7 @@ use Behat\MinkExtension\Context\MinkContext;
 /**
  * Features context.
  */
-class FeatureContext extends RawMinkContext
+class FeatureContext extends RawMinkContext 
 {
     public function __construct(array $parameters)
     {

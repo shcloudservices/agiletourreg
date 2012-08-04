@@ -1,7 +1,12 @@
+SHCloudHomeBundle:
+    resource: "@SHCloudHomeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 SHCloudRegisterBundle:
     resource: "@SHCloudRegisterBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /registro
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
