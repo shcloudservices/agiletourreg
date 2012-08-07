@@ -1,4 +1,2 @@
-## YAML Template.
----
-shcloud_register:
+parameters:
     ciudad: Caracas

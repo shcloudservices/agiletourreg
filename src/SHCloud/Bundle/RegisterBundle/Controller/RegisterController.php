@@ -14,6 +14,7 @@ class RegisterController extends Controller
      */
     public function registroPonenteAction()
     {
-        return array();
+        $ciudad = $this->container->getParameter('ciudad');
+        return array('ciudad' => $ciudad);
     }
 }
