@@ -14,6 +14,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Usuario extends BaseUser
 {
+    
+    public static $TYPE_PONENTE='ponente';
+    public static $TYPE_PARTICIPANTE='participante';
+    
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -22,11 +26,21 @@ class Usuario extends BaseUser
     protected $id;
 
     /**
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Introduzca su nombre completo", groups={"Registration", "Profile"})
      * @Assert\MinLength(limit="3", message="El nombre es demasiado corto", groups={"Registration", "Profile"})
      * @Assert\MaxLength(limit="255", message="El nombre es demasiado largo", groups={"Registration", "Profile"})
      */    
     protected $nombre;
+    
+    /**
+     * @ORM\Column(type="string", length=12)
+     * @Assert\Choice(
+     *     choices = { "ponente", "participante" },
+     *     message = "Elija un tipo de usuario válido"
+     * )
+     */
+    protected $tipo;
     
     /**
      * @ORM\OneToOne(targetEntity="Presentacion")
@@ -45,5 +59,37 @@ class Usuario extends BaseUser
         parent::__construct();
     }
     
-    
+    public function getNombre() {
+        return $this->nombre;
+    }
+
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    public function getTipo() {
+        return $this->tipo;
+    }
+
+    public function setTipo($tipo) {
+        $this->tipo = $tipo;
+    }
+
+    public function getPresentacion() {
+        return $this->presentacion;
+    }
+
+    public function setPresentacion($presentacion) {
+        $this->presentacion = $presentacion;
+    }
+
+    public function getPago() {
+        return $this->pago;
+    }
+
+    public function setPago($pago) {
+        $this->pago = $pago;
+    }
+
+   
 }
