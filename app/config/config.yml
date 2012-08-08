@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: agiletour.yml }
 
 framework:
     #esi:             ~
@@ -60,3 +61,6 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: SHCloud\Bundle\RegisterBundle\Entity\Usuario
+    registration:
+        form:
+            type: shcloud_register_registro

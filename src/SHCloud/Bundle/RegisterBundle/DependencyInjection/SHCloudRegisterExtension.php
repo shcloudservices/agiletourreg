@@ -25,17 +25,6 @@ class SHCloudRegisterExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         
-        $loaderYaml = new YamlFileLoader($container, new FileLocator(__DIR__.'/../../../../config'));
-
-        try
-        {
-            $loader->load('services.xml');
-            $loaderYaml->load('parameters.yml');
-        }
-        catch(\InvalidArgumentException $e)
-        {
-            
-            
-        }
+        $loader->load('services.xml');
     }
 }

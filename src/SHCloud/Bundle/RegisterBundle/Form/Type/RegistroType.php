@@ -16,7 +16,8 @@ class RegistroType extends BaseType{
     {
         parent::buildForm($builder, $options);
 
-        $builder->add('nombre');
+        $builder->add('nombre', 'text');
+        $builder->add('tipo', 'hidden');
         $builder->add('presentacion', new PresentacionType);
         $builder->add('pago', new PagoType);
     }
@@ -25,12 +26,20 @@ class RegistroType extends BaseType{
     {
         $resolver->setDefaults(array(
             'data_class' => 'SHCloud\Bundle\RegisterBundle\Entity\Usuario',
+            'validation_groups' => function(FormInterface $form) {
+                $data = $form->getData();
+                if (SHCloud\Bundle\RegisterBundle\Entity\Usuario::TYPE_PONENTE == $data->getTipo()) {
+                    return array('ponente','registro');
+                } else {
+                    return array('participante', 'registro');
+                }
+        },
         ));
     }
     
     public function getName()
     {
-        return 'shcloud_user_registration';
+        return 'shcloud_register_registro';
     }
 }
 
