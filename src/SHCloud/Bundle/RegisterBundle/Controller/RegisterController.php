@@ -18,9 +18,9 @@ class RegisterController extends Controller
      */
     public function registroPonenteAction(Request $request)
     {
-        $usuario = new Usuario();
-        $usuario->setTipo(Usuario::$TYPE_PONENTE);
-        $usuario->setPresentacion(new Presentacion());
+//        $usuario = new Usuario();
+//        $usuario->setTipo(Usuario::$TYPE_PONENTE);
+//        $usuario->setPresentacion(new Presentacion());
         $form = $this->container->get('fos_user.registration.form');
         
         if ($request->getMethod() == 'POST') {
