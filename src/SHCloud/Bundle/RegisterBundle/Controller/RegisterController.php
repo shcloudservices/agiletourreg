@@ -9,6 +9,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class RegisterController extends Controller
 {
     /**
+     * @Route("/participante", name="registro_participante")
+     * @Template()
+     */
+    public function registroParticipanteAction()
+    {
+        return array();
+    }
+
+    /**
      * @Route("/ponente", name="registro_ponente")
      * @Template()
      */
@@ -16,4 +25,5 @@ class RegisterController extends Controller
     {
         return array();
     }
+
 }
