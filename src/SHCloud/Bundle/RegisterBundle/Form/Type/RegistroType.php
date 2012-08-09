@@ -18,22 +18,22 @@ class RegistroType extends BaseType{
 
         $builder->add('nombre', 'text');
         $builder->add('tipo', 'hidden');
-        $builder->add('presentacion', new PresentacionType);
-        $builder->add('pago', new PagoType);
+        $builder->add('presentacion', new PresentacionType());
+        //$builder->add('pago', new PagoType);
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'SHCloud\Bundle\RegisterBundle\Entity\Usuario',
-            'validation_groups' => function(FormInterface $form) {
-                $data = $form->getData();
-                if (SHCloud\Bundle\RegisterBundle\Entity\Usuario::TYPE_PONENTE == $data->getTipo()) {
-                    return array('ponente','registro');
-                } else {
-                    return array('participante', 'registro');
-                }
-        },
+//            'data_class' => 'SHCloud\Bundle\RegisterBundle\Entity\Usuario',
+//            'validation_groups' => function(FormInterface $form) {
+//                $data = $form->getData();
+//                if (SHCloud\Bundle\RegisterBundle\Entity\Usuario::TYPE_PONENTE == $data->getTipo()) {
+//                    return array('ponente','registro');
+//                } else {
+//                    return array('participante', 'registro');
+//                }
+//        },
         ));
     }
     

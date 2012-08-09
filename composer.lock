@@ -22,8 +22,8 @@
         {
             "package": "behat/mink-extension",
             "version": "dev-master",
-            "source-reference": "7cc6e98ec9161280cfb944a9bd98a1358ac416e8",
-            "commit-date": "1343851539"
+            "source-reference": "26a7d073348ab445ef654713f8656954f9467d0d",
+            "commit-date": "1344108318"
         },
         {
             "package": "behat/mink-selenium2-driver",
@@ -118,8 +118,8 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "11324294acf2dcf6b7f7cb0c4f35fd77e6f01cb7",
-            "commit-date": "1343684910"
+            "source-reference": "ce9c557989f95abffe792c63f84f404a2f019ef8",
+            "commit-date": "1344261272"
         },
         {
             "package": "monolog/monolog",
@@ -128,8 +128,8 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "26a1165b8cfbde91bf01d809f87bc286f18f0963",
-            "commit-date": "1343979103"
+            "source-reference": "57190e5baa0cc1d8ef6095ce57e6719a5eae2b79",
+            "commit-date": "1344240835"
         },
         {
             "package": "sensio/framework-extra-bundle",
@@ -182,6 +182,12 @@
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/monolog-bundle",
+            "version": "dev-master",
             "source-reference": "v2.1.0-BETA4",
             "commit-date": "1341078487"
         },
@@ -206,8 +212,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "c99f9d29cd829b0d1614f62d68432367fcb289ac",
-            "commit-date": "1344074900"
+            "source-reference": "7dbadbf29acc731250459958a1d7e99c9809c74a",
+            "commit-date": "1344353552"
         },
         {
             "package": "twig/extensions",
@@ -224,8 +230,8 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "51c866f415bbee670cd9ba13591307bce8dabdca",
-            "commit-date": "1343464333"
+            "source-reference": "f2f698c820d4396f519ef4175ad6fe79fcfb9ecf",
+            "commit-date": "1344328685"
         },
         {
             "package": "twitter/bootstrap",

@@ -13,14 +13,23 @@ use Symfony\Component\HttpFoundation\Request;
 class RegisterController extends Controller
 {
     /**
+     * @Route("/participante", name="registro_participante")
+     * @Template()
+     */
+    public function registroParticipanteAction()
+    {
+        return array();
+    }
+
+    /**
      * @Route("/ponente", name="registro_ponente")
      * @Template()
      */
     public function registroPonenteAction(Request $request)
     {
-        $usuario = new Usuario();
-        $usuario->setTipo(Usuario::$TYPE_PONENTE);
-        $usuario->setPresentacion(new Presentacion());
+//        $usuario = new Usuario();
+//        $usuario->setTipo(Usuario::$TYPE_PONENTE);
+//        $usuario->setPresentacion(new Presentacion());
         $form = $this->container->get('fos_user.registration.form');
         
         if ($request->getMethod() == 'POST') {
@@ -34,4 +43,5 @@ class RegisterController extends Controller
         $ciudad = $this->container->getParameter('ciudad');
         return array('ciudad' => $ciudad, 'form' => $form->createView());
     }
+
 }
