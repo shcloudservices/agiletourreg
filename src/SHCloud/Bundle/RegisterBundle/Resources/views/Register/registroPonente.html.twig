@@ -1,5 +1,5 @@
 {% extends 'SHCloudRegisterBundle:Register:base.html.twig' %}
-{% block content %}Registro de ponente
+{% block content %}Registro de ponente de {{ciudad}}
 
 <form action="{{ path('registro_ponente') }}" method="post" {{ form_enctype(form) }}>
     {{ form_errors(form) }}
