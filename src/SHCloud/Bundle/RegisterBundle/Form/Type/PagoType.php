@@ -9,15 +9,17 @@ class PagoType extends AbstractType{
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('banco', 'choice', array('choices' => array(
-            'MERCANTIL' => 'Mercantil', 
-            'BANESCO' => 'Banesco'
+        $builder->add('banco', 'choice', 
+                      array('label'  => 'Banco', 
+                             'choices' => array('MERCANTIL' => 'Mercantil', 
+                                                'BANESCO' => 'Banesco'
             )));
-        $builder->add('tipoTransaccion', 'choice', array('choices' => array(
-            '1' => 'Depósito', 
-            '2' => 'Transferencia'
+        $builder->add('tipoTransaccion', 'choice', 
+                      array('label'  => 'Tipo de Transacción', 
+                            'choices' => array('1' => 'Depósito', 
+                                               '2' => 'Transferencia'
             )));
-        $builder->add('numeroTransaccion', 'text');        
+        $builder->add('numeroTransaccion', 'text', array('label'  => 'Número de Transacción'));
     }
     
     public function setDefaultOptions(OptionsResolverInterface $resolver)
