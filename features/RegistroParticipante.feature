@@ -9,7 +9,7 @@ Característica: Registro de Participante
 #    Y there is agent B
 
   Escenario: Registro exitoso de un Visitante como Participante
-    Dado I am on homepage
+    Dado estoy en la página de inicio
     Y sigo "Registro de Participante"
     Cuando relleno "Correo Electrónico" con "frodo@shire.com"
     Y relleno "Nombre Completo" con "Frodo Bolsón"
@@ -23,7 +23,7 @@ Característica: Registro de Participante
     #Y debo recibir un correo electrónico con la información de mi registro
 
 #  Escenario: Registro fallido de un Visitante como Participante cuando introduce el campo "Correo Electrónico" incorrecto.
-#    Dado I am on homepage
+#    Dado estoy en la página de inicio
 #    Y sigo "Registro de Participante"
 #    Cuando relleno "Correo Electrónico" con "sauron.com"
 #    Y relleno "Nombre Completo" con "Frodo Bolsón"
@@ -34,10 +34,10 @@ Característica: Registro de Participante
 #    Y presiono "Aceptar"
 #    Entonces debo ver "Datos incorrectos, por favor verifique"
 #    Y debo estar en "registro"
-#    Y el campo "Correo Electrónico" debe contener "*"        #Y debería ver el campo "Correo Electrónico" marcado como erróneo.
+#    #Y debería ver el campo "Correo Electrónico" marcado como erróneo.
 
 #  Escenario: Participante se registra nuevamente
-#    Dado I am on homepage
+#    Dado estoy en la página de inicio
 #    Y sigo "Registro de Participante"
 #    #Y existe un usuario registrado con Correo Electrónico "frodo@shire.com"
 #    Cuando relleno "Correo Electrónico" con "frodo@shire.com"
