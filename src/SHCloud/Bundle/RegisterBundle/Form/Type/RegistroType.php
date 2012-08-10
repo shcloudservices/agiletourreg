@@ -19,7 +19,7 @@ class RegistroType extends BaseType{
         $builder->add('nombre', 'text');
         $builder->add('tipo', 'hidden');
         $builder->add('presentacion', new PresentacionType());
-        //$builder->add('pago', new PagoType);
+        $builder->add('pago', new PagoType());
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

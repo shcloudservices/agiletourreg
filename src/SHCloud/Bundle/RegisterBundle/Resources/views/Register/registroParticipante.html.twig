@@ -1,3 +1,19 @@
 {% extends 'SHCloudRegisterBundle:Register:base.html.twig' %}
 {% block content %}Registro de participante de {{ciudad}}
+
+<form action="{{ path('registro_participante') }}" method="post" >
+    {{ form_errors(form) }}
+
+    {{ form_row(form.nombre) }}
+    {{ form_row(form.tipo) }}
+
+    {{ form_row(form.pago.banco) }}
+    {{ form_row(form.pago.tipoTransaccion) }}
+    {{ form_row(form.pago.numeroTransaccion) }}
+            
+    {{ form_rest(form) }}
+
+    <input type="submit" />
+</form>
+
 {% endblock %}
