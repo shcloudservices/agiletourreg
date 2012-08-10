@@ -4,6 +4,7 @@
 <form action="{{ path('registro_ponente') }}" method="post" {{ form_enctype(form) }}>
     {{ form_errors(form) }}
 
+        <label for="fos_user_registration_form_email">Correo Electrónico</label>{{ form_widget(form.email) }}
     {{ form_row(form.nombre) }}
     {{ form_row(form.tipo) }}
 
