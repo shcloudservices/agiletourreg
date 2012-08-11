@@ -61,7 +61,7 @@ class RegisterController extends Controller
      * @Route("/registroexitoso", name="registro_exitoso")
      * @Template()
      */
-    public function registroExitoso(Request $request)
+    public function registroExitosoAction(Request $request)
     {
         return array();
     }
