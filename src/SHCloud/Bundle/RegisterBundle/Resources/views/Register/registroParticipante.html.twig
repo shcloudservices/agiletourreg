@@ -4,16 +4,15 @@
 <form action="{{ path('registro_participante') }}" method="post">
     {{ form_errors(form) }}
 
+    <label for="fos_user_registration_form_email">Correo Electrónico</label>{{ form_widget(form.email) }} {{ form_errors(form.email) }}
     {{ form_row(form.nombre) }}
     {{ form_row(form.tipo) }}
-
     {{ form_row(form.pago.banco) }}
     {{ form_row(form.pago.tipoTransaccion) }}
     {{ form_row(form.pago.numeroTransaccion) }}
-            
-    {{ form_rest(form) }}
-
-    <input type="submit" />
+    {{ form_row(form._token) }}
+    <input type="hidden" id="fos_user_registration_form_username" name="fos_user_registration_form[username]" value="andreinaromero"/>
+    <input type="submit" value="Aceptar"/>
 </form>
 
 {% endblock %}

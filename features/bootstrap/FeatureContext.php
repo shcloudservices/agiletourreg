@@ -18,5 +18,5 @@ class FeatureContext extends RawMinkContext
     {
         $this->useContext('mink', new MinkContext);
     }
-
+    
 }

@@ -11,7 +11,7 @@ class PagoType extends AbstractType{
     {
         $builder->add('banco', 'choice', 
                       array('label'  => 'Banco', 
-                             'choices' => array('MERCANTIL' => 'Mercantil', 
+                             'choices' => array('BOD' => 'BOD', 
                                                 'BANESCO' => 'Banesco'
             )));
         $builder->add('tipoTransaccion', 'choice', 

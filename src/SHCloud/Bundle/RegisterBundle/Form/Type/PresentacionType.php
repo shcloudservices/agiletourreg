@@ -9,9 +9,9 @@ class PresentacionType extends AbstractType{
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titulo', 'text');
-        $builder->add('resumen', 'textarea');
-        $builder->add('laminas', 'file');
+        $builder->add('titulo', 'text', array('label'=>'Título de la conferencia'));
+        $builder->add('resumen', 'textarea', array('label'=>'Resumen de la conferencia'));
+        $builder->add('archivo', 'file');
     }
     
     public function setDefaultOptions(OptionsResolverInterface $resolver)

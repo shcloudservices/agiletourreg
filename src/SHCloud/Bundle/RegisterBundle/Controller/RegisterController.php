@@ -19,11 +19,13 @@ class RegisterController extends Controller
      */
     public function registroParticipanteAction(Request $request)
     {
+        /**
+         * @var RegistroType
+         */
         $form = $this->container->get('fos_user.registration.form');
         
         if ($request->getMethod() == 'POST') {
             $form->bind($request);
-
             if ($form->isValid()) {
                 return $this->redirect($this->generateUrl('registro_exitoso'));
             }
@@ -39,9 +41,6 @@ class RegisterController extends Controller
      */
     public function registroPonenteAction(Request $request)
     {
-//        $usuario = new Usuario();
-//        $usuario->setTipo(Usuario::$TYPE_PONENTE);
-//        $usuario->setPresentacion(new Presentacion());
         $form = $this->container->get('fos_user.registration.form');
         
         if ($request->getMethod() == 'POST') {
@@ -49,11 +48,22 @@ class RegisterController extends Controller
 
             if ($form->isValid()) {
                 return $this->redirect($this->generateUrl('registro_exitoso'));
+            } else {
+                //$errorList = $this->get('validator')->validate()
             }
         }
         
         $ciudad = $this->container->getParameter('ciudad');
         return array('ciudad' => $ciudad, 'form' => $form->createView());
+    }
+    
+    /**
+     * @Route("/registroexitoso", name="registro_exitoso")
+     * @Template()
+     */
+    public function registroExitoso(Request $request)
+    {
+        return array();
     }
 
 }

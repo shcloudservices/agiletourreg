@@ -98,9 +98,6 @@ class Presentacion {
         }
     }
     
-    
-    
-
     /**
      * Get id
      *
@@ -197,5 +194,15 @@ class Presentacion {
     {
         // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
         return 'uploads/documents';
-    }    
+    }
+    
+    public function getArchivo() {
+        return $this->archivo;
+    }
+
+    public function setArchivo($archivo) {
+        $this->archivo = $archivo;
+    }
+
+
 }

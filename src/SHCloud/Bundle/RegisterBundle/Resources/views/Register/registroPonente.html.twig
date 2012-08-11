@@ -4,10 +4,15 @@
 <form action="{{ path('registro_ponente') }}" method="post" {{ form_enctype(form) }}>
     {{ form_errors(form) }}
 
-        <label for="fos_user_registration_form_email">Correo Electrónico</label>{{ form_widget(form.email) }}
+    <label for="fos_user_registration_form_email">Correo Electrónico</label>{{ form_widget(form.email) }}
     {{ form_row(form.nombre) }}
     {{ form_row(form.tipo) }}
 
+    <label for="fos_user_registration_form_plainPassword_first" class="required">Contraseña:</label>
+    <input type="password" id="fos_user_registration_form_plainPassword_first" name="fos_user_registration_form[plainPassword][first]" required="required" />
+    <label for="fos_user_registration_form_plainPassword_second" class="required">Confirmar contraseña:</label>
+    <input type="password" id="fos_user_registration_form_plainPassword_second" name="fos_user_registration_form[plainPassword][second]" required="required" />
+    
     {{ form_row(form.presentacion.titulo) }}
     {{ form_row(form.presentacion.resumen) }}
     {{ form_row(form.presentacion.laminas) }}
