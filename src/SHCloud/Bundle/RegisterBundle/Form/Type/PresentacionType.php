@@ -11,7 +11,7 @@ class PresentacionType extends AbstractType{
     {
         $builder->add('titulo', 'text', array('label'=>'Título de la conferencia'));
         $builder->add('resumen', 'textarea', array('label'=>'Resumen de la conferencia'));
-        $builder->add('archivo', 'file');
+        $builder->add('archivo', 'file', array('label' => 'Anexar presentación'));
     }
     
     public function setDefaultOptions(OptionsResolverInterface $resolver)

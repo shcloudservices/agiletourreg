@@ -6,9 +6,9 @@ Característica: Registro de Ponente
   Para proponer una conferencia para el evento
 
   Escenario: Visitante se registra como ponente 
-    Dado estoy en la página de inicio
+    Dado que estoy en la página de inicio
     Y sigo "Registro de Ponente"
-    Cuando relleno "Correo Electrónico" con "bilbo@shire.com"
+    Cuando relleno "Correo Electrónico" con "bilbo@comarca.com"
     Y relleno "Nombre Completo" con "Bilbo Bolsón"
     Y relleno "Contraseña" con "12345"
     Y relleno "Confirmar contraseña" con "12345"
@@ -18,4 +18,5 @@ Característica: Registro de Ponente
     Y presiono "Aceptar"
     Entonces debo ver "Usted se ha registrado satisfactoriamente"
     Y debo estar en Registro Exitoso
-    Y debo recibir un correo electrónico con titulo "Información de su registro"
+    Y se envia un correo electrónico con la información del registro
+    Y debe existir un usuario "bilbo@comarca.com"

@@ -37,12 +37,11 @@ class Presentacion {
 	private $resumen;
 
 	/**
-	 * @var string $ruta
+	 * @var string $nombreArchivo
 	 *
-	 * @ORM\Column(name="ruta", type="string", length=255, nullable=false)
-         * @Assert\NotNull
+	 * @ORM\Column(name="nombreArchivo", type="string", length=255, nullable=false)
 	 */
-	private $ruta;
+	private $nombreArchivo;
 
     /**
      * @Assert\File(
@@ -54,18 +53,17 @@ class Presentacion {
     protected $archivo;
 
     private $archivoARemover;
-    
+
     /**
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
      */
     public function preUpload()
     {
-        if (null !== $this->archivo) {
-            $this->ruta = $this->archivo->guessExtension();
-        }
+        $this->nombreArchivo = uniqid().'.'.$this->archivo->guessExtension();
     }
-
+    
+    
     /**
      * @ORM\PostPersist()
      * @ORM\PostUpdate()
@@ -76,7 +74,7 @@ class Presentacion {
             return;
         }
 
-        $this->archivo->move($this->getUploadRootDir(), $this->id.'.'.$this->archivo->guessExtension());
+        $this->archivo->move($this->getUploadRootDir(), $this->getNombreArchivo());
         unset($this->archivo);
     }
     
@@ -152,50 +150,14 @@ class Presentacion {
         return $this->resumen;
     }
 
-    /**
-     * Set ruta
-     *
-     * @param string $ruta
-     * @return Presentacion
-     */
-    public function setRuta($ruta)
-    {
-        $this->ruta = $ruta;
-        return $this;
+    public function getNombreArchivo() {
+        return $this->nombreArchivo;
     }
 
-    /**
-     * Get ruta
-     *
-     * @return string 
-     */
-    public function getRuta()
-    {
-        return $this->ruta;
-    }
-    
-    public function getRutaAbsoluta()
-    {
-        return null === $this->ruta ? null : $this->getUploadRootDir().'/'.$this->id.'.'.$this->ruta;
+    public function setNombreArchivo($nombreArchivo) {
+        $this->nombreArchivo = $nombreArchivo;
     }
 
-    public function getRutaWeb()
-    {
-        return null === $this->ruta ? null : $this->getUploadDir().'/'.$this->ruta;
-    }
-
-    protected function getUploadRootDir()
-    {
-        // the absolute directory path where uploaded documents should be saved
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    protected function getUploadDir()
-    {
-        // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
-        return 'uploads/documents';
-    }
-    
     public function getArchivo() {
         return $this->archivo;
     }
@@ -203,6 +165,27 @@ class Presentacion {
     public function setArchivo($archivo) {
         $this->archivo = $archivo;
     }
+    
+    public function getRutaAbsoluta()
+    {
+        return null === $this->nombreArchivo ? null : $this->getUploadRootDir().'/'.$this->getNombreArchivo();
+    }
 
+//    public function getRutaWeb()
+//    {
+//        return null === $this->ruta ? null : $this->getUploadDir().'/'.$this->ruta;
+//    }
 
+    protected function getUploadRootDir()
+    {
+        // the absolute directory path where uploaded documents should be saved
+        return __DIR__.'/../../../../../'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
+        return 'uploads';
+    }
+    
 }

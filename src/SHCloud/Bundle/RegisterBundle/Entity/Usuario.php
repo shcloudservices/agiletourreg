@@ -39,6 +39,7 @@ class Usuario extends BaseUser
      *     choices = { "ponente", "participante" },
      *     message = "Elija un tipo de usuario válido"
      * )
+     * @Assert\NotNull(message="El tipo de usuario no esta definido", groups={"Registration", "Profile"})
      */
     protected $tipo;
     
@@ -91,5 +92,31 @@ class Usuario extends BaseUser
         $this->pago = $pago;
     }
 
-   
+    /**
+     * Sets the email.
+     *
+     * @param string $email
+     *
+     * @return Usuario
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        $this->username = $email;
+        return $this;
+    }
+
+    /**
+     * Set the canonical email.
+     *
+     * @param string $emailCanonical
+     *
+     * @return Usuario
+     */
+    public function setEmailCanonical($emailCanonical)
+    {
+        $this->emailCanonical = $emailCanonical;
+        $this->usernameCanonical = $emailCanonical;
+        return $this;
+    }   
 }

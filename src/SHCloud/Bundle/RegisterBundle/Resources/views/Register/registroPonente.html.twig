@@ -15,11 +15,11 @@
     
     {{ form_row(form.presentacion.titulo) }}
     {{ form_row(form.presentacion.resumen) }}
-    {{ form_row(form.presentacion.laminas) }}
-        
-    {{ form_rest(form) }}
+    {{ form_row(form.presentacion.archivo) }}
+    <input type="hidden" id="fos_user_registration_form_tipo" name="fos_user_registration_form[tipo]" value="ponente"/>    
+    {{ form_row(form._token) }}
 
-    <input type="submit" />
+    <input type="submit" value="Aceptar"/>
 </form>
 
 {% endblock %}

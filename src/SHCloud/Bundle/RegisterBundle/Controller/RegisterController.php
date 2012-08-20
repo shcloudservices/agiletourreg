@@ -10,6 +10,7 @@ use SHCloud\Bundle\RegisterBundle\Entity\Pago;
 use SHCloud\Bundle\RegisterBundle\Entity\Presentacion;
 use SHCloud\Bundle\RegisterBundle\Form\Type\RegistroType;
 use Symfony\Component\HttpFoundation\Request;
+use SHCloud\Bundle\RegisterBundle\Service\RegistroService;
 
 class RegisterController extends Controller
 {
@@ -45,11 +46,11 @@ class RegisterController extends Controller
         
         if ($request->getMethod() == 'POST') {
             $form->bind($request);
-
+            
             if ($form->isValid()) {
+                $registroService = $this->get('shcloud_register.registro_service');
+                $registroService->registrarPonente($form->getData());
                 return $this->redirect($this->generateUrl('registro_exitoso'));
-            } else {
-                //$errorList = $this->get('validator')->validate()
             }
         }
         

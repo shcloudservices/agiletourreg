@@ -19,7 +19,7 @@ class RegistroType extends BaseType{
 
         $builder->add('nombre', 'text', array('label'=>'Nombre Completo'));
         $builder->add('tipo', 'hidden');        
-        //$builder->add('presentacion', new PresentacionType());
+        $builder->add('presentacion', new PresentacionType());
         $builder->add('pago', new PagoType());
     }
 
@@ -29,7 +29,7 @@ class RegistroType extends BaseType{
             'data_class' => 'SHCloud\Bundle\RegisterBundle\Entity\Usuario',
             'validation_groups' => function(FormInterface $form) {
                 $data = $form->getData();
-                if (SHCloud\Bundle\RegisterBundle\Entity\Usuario::TYPE_PONENTE == $data->getTipo()) {
+                if (SHCloud\Bundle\RegisterBundle\Entity\Usuario::TYPE_PONENTE === $data->getTipo()) {
                     return array('ponente','registro');
                 } else {
                     return array('participante', 'registro');
