@@ -16,7 +16,11 @@ Característica: Registro de Ponente
     Y relleno "Resumen de la conferencia" con "Lorem ipsum...  Lorem ipsum... Lorem ipsum... "
     Y adjunto el archivo "presentacion.pdf" a "Anexar presentación"
     Y presiono "Aceptar"
+    Entonces muestra la última respuesta
     Entonces debo ver "Usted se ha registrado satisfactoriamente"
     Y debo estar en Registro Exitoso
     Y se envia un correo electrónico con la información del registro
     Y debe existir un usuario "bilbo@comarca.com"
+
+  Escenario: Ponente se registra nuevamente
+    Dado que estoy en la página de inicio

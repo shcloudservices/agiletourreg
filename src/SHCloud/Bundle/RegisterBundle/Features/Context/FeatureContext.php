@@ -36,7 +36,7 @@ class FeatureContext extends MinkContext
      */
     public function __construct(array $parameters)
     {
-        $this->parameters = $parameters;
+        $this->parameters = $parameters;        
     }
 
     /**
@@ -57,5 +57,10 @@ class FeatureContext extends MinkContext
     {
         return new Given('estoy en la página de inicio');
     }
-
+   
+    
+    public function crearEsquema(KernelInterface $kernel)
+    {
+        $kernel->getContainer()->get('doctrine');
+    }
 }

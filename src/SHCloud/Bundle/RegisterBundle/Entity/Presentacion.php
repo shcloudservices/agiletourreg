@@ -60,7 +60,9 @@ class Presentacion {
      */
     public function preUpload()
     {
-        $this->nombreArchivo = uniqid().'.'.$this->archivo->guessExtension();
+        if (null !== $this->archivo) {
+            $this->nombreArchivo = uniqid().'.'.$this->archivo->guessExtension();
+        }
     }
     
     
