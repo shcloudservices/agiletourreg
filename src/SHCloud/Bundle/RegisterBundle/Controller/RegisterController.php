@@ -28,6 +28,8 @@ class RegisterController extends Controller
         if ($request->getMethod() == 'POST') {
             $form->bind($request);
             if ($form->isValid()) {
+                $registroService = $this->get('shcloud_register.registro_service');
+                $registroService->registrarParticipante($form->getData());
                 return $this->redirect($this->generateUrl('registro_exitoso'));
             }
         }

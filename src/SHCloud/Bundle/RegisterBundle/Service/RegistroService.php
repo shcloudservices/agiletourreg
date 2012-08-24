@@ -15,6 +15,20 @@ class RegistroService {
         $this->mailer = $mailer;
     }
 
+    public function registrarParticipante(Usuario $usuario)
+    {
+        $usuario->setPresentacion(null);
+        try{
+            $this->entityManager->persist($usuario->getPago());
+            $this->entityManager->persist($usuario);
+            $this->entityManager->flush();
+            
+        } catch (Exception $e){
+            throw new RegisterException();
+        }
+        
+    }
+
     public function registrarPonente(Usuario $usuario)
     {
         $usuario->setPago(null);
