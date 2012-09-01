@@ -22,3 +22,4 @@ app/config/parameters.ini
 nbproject/*
 uploads/
 test.sqlite
+agiletourreg_test.sqlite

@@ -12,6 +12,9 @@ use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 
 use Behat\Behat\Context\Step\Given;
+use Behat\Behat\Event\SuiteEvent;
+
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 
 //
 // Require 3rd-party libraries here:
@@ -49,7 +52,17 @@ class FeatureContext extends MinkContext
     {
         $this->kernel = $kernel;
     }
-
+    
+    /** 
+     * @BeforeScenario 
+     */
+    public function before($event)
+    {
+        $em = $this->kernel->getContainer()->get('doctrine.orm.entity_manager');
+        $purger = new ORMPurger($em);
+        $purger->purge();
+    }    
+    
     /**
      * @Given /^que estoy en la página de inicio$/
      */
@@ -58,9 +71,4 @@ class FeatureContext extends MinkContext
         return new Given('estoy en la página de inicio');
     }
    
-    
-    public function crearEsquema(KernelInterface $kernel)
-    {
-        $kernel->getContainer()->get('doctrine');
-    }
 }

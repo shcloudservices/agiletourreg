@@ -18,15 +18,16 @@
         "sensio/generator-bundle": "dev-master",
         "jms/security-extra-bundle": "1.1.*",
         "jms/di-extra-bundle": "1.0.*",
-		"behat/behat": "2.4.*@stable",
-		"behat/mink": "1.4@stable",
-		"behat/symfony2-extension": "*",
-		"behat/mink-extension": "*",
-		"behat/mink-browserkit-driver": "*",
-		"behat/mink-selenium2-driver":  "*",
-		"twitter/bootstrap": "2.0.*",
-		"friendsofsymfony/user-bundle": "*",
-		"doctrine/doctrine-migrations-bundle": "dev-master"
+	"behat/behat": "2.4.*@stable",
+	"behat/mink": "1.4@stable",
+	"behat/symfony2-extension": "*",
+	"behat/mink-extension": "*",
+	"behat/mink-browserkit-driver": "*",
+	"behat/mink-selenium2-driver":  "*",
+	"twitter/bootstrap": "2.0.*",
+	"friendsofsymfony/user-bundle": "*",
+	"doctrine/doctrine-migrations-bundle": "dev-master",
+        "doctrine/doctrine-fixtures-bundle": "dev-master"
     },
     "repositories": [
         {
