@@ -49,6 +49,7 @@ class Presentacion {
      *      mimeTypes = {"application/pdf", "application/x-pdf"},
      *      mimeTypesMessage = "Por favor cargue un PDF válido"
      * )
+     * @Assert\NotNull(message="Debe anexar su presentación", groups={"Registration", "Profile"})
      */
     protected $archivo;
 

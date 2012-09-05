@@ -24,7 +24,7 @@ class RegistroService {
             $this->entityManager->flush();
             
         } catch (Exception $e){
-            throw new RegisterException();
+            throw new RegistroException();
         }
         
     }
@@ -38,9 +38,8 @@ class RegistroService {
             $this->entityManager->flush();
             
         } catch (Exception $e){
-            throw new RegisterException();
-        }
-        
+            throw new RegistroException();
+        }        
     }
     
 }
