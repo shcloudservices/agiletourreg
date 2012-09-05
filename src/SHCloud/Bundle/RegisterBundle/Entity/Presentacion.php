@@ -63,6 +63,8 @@ class Presentacion {
     {
         if (null !== $this->archivo) {
             $this->nombreArchivo = uniqid().'.'.$this->archivo->guessExtension();
+        } else {
+            throw new \Exception('Archivo es un campo requerido');
         }
     }
     

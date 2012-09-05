@@ -14,13 +14,12 @@ Característica: Registro de Ponente
     Y relleno "Confirmar contraseña" con "12345"
     Y relleno "Título de la conferencia" con "Historia de una ida y una vuelta"
     Y relleno "Resumen de la conferencia" con "Lorem ipsum...  Lorem ipsum... Lorem ipsum... "
-    Y adjunto el archivo "presentacion.pdf" a "Anexar presentación"
+    Y adjunto una presentación a "Anexar presentación"
     Y presiono "Aceptar"
-    Entonces muestra la última respuesta
     Entonces debo ver "Usted se ha registrado satisfactoriamente"
     Y debo estar en Registro Exitoso
     Y se envia un correo electrónico con la información del registro
-    Y debe existir un usuario "bilbo@comarca.com"
+    Y debo ser un usuario registrado
 
   Escenario: Ponente se registra nuevamente
     Dado que estoy en la página de inicio
