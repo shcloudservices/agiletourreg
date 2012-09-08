@@ -23,3 +23,5 @@ nbproject/*
 uploads/
 test.sqlite
 agiletourreg_test.sqlite
+web/css/generated/*
+web/js/generated/*
