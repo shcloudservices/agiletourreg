@@ -1,3 +1,55 @@
 body {
 	padding-top: 50px;
+    background-image: url('../images/agilii_logo.jpg');
+    background-repeat: no-repeat;
+    background-position: right 20px;
+}
+
+footer p {
+    text-align: center;
+}
+
+.event {
+    padding: 5px;
+}
+
+.event-header {
+    background-color: #f0f8ff;
+    border: #999966 solid thin;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 5px;
+}
+
+.event-body {
+    border: #999966 solid thin;
+    border-top-style: none;
+    padding: 5px;
+}
+
+.event-link {
+    font-size: 1.2em;
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.event-links {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.event-city {
+    float: left;
+    padding-left: 5px;
+}
+
+.event-date {
+    float: right;
+    margin-right: 30px;
+    margin-top: 5px;
+}
+
+#event-list {
+    padding-top: 25px;
 }

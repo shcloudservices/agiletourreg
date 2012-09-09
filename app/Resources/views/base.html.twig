@@ -5,9 +5,10 @@
         <title>Registro de Agile Tour 2012{% block title %}Registro de Agile Tour 2012{% endblock %}</title>
         {% block stylesheets %}
             {% stylesheets
-                'css/bootstrap/bootstrap.css'
+                '../app/Resources/public/bootstrap/css/bootstrap.css'
                 'css/main.css'
-                output='css/generated/layout.css'
+                output='css/generated/main.css'
+                filter='cssrewrite'
             %}
             <link rel="stylesheet" href="{{asset_url}}">
             {% endstylesheets %}
@@ -23,16 +24,16 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container">
             {% block content %}{% endblock %}
             <hr>
             <footer>
-                <p>Desarrollado por <a href="http://solucioneshospedadas.com/">Soluciones Hospedadas</a></p>
+                <p>Desarrollado por <a href="http://solucioneshospedadas.com/">Soluciones Hospedadas</a>. 2012 Todos los derechos reservados.</p>
             </footer>  
         </div>
         {% block javascripts %}
             {% javascripts
-                'js/bootstrap/bootstrap.js'
+                '../app/Resources/public/bootstrap/js/bootstrap.js'
                 output='js/generated/main.js'
             %}
             <script type="text/javascript" src="{{asset_url}}"></script>
