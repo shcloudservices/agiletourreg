@@ -3,6 +3,7 @@
 namespace SHCloud\Bundle\HomeBundle\Features\Context;
 
 use Symfony\Component\HttpKernel\KernelInterface;
+use Behat\Behat\Context\Step\Then;
 use SHCloud\Behat\DataAwareContext;
 use Behat\Symfony2Extension\Context\KernelAwareInterface;
 use Behat\MinkExtension\Context\MinkContext;
@@ -24,18 +25,25 @@ class FeatureContext extends DataAwareContext
     public function queExistenLosEventos(TableNode $table)
     {
         $em = $this->get('doctrine.orm.entity_manager');
-        $hash = $table->getRows();
+        $hash = $table->getHash();
         foreach($hash as $row){
-
+            $event = new \SHCloud\Bundle\HomeBundle\Entity\Event();
+            $event->setCiudad($row['Ciudad']);
+            $event->setFecha(\DateTime::createFromFormat('d/m/Y', $row['Fecha']));
+            /** @var $em \Doctrine\ORM\EntityManager */
+            $em->persist($event);
         }
     }
 
     /**
      * @Then /^debo ver el evento "([^"]*)" con fecha "([^"]*)"$/
      */
-    public function deboVerElEventoConFecha($arg1, $arg2)
+    public function deboVerElEventoConFecha($ciudad, $fecha)
     {
-        throw new PendingException();
+        return array(
+            new Then("debo ver texto que siga el patrón \"$ciudad\""),
+            new Then("debo ver texto que siga el patrón \"$fecha\"")
+        );
     }
 
     /**
@@ -43,7 +51,7 @@ class FeatureContext extends DataAwareContext
      */
     public function ambosEventosDebenTenerEnlacesParaRegistrarseComoParticipanteYPonente()
     {
-        throw new PendingException();
+        return new Then("debo ver 4 \"li.event-link\" elementos");
     }
 
 }

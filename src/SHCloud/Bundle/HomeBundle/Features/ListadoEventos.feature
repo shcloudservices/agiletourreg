@@ -9,9 +9,9 @@ Para tener acceso al registro
 
 Escenario: Lista de eventos
   Dado que existen los eventos:
-    | id | Ciudad  | Fecha      |
-    | 1  | Caracas | 08-11-2012 |
-    | 2  | Mérida  | 10-11-2012 |
+    | Ciudad  | Fecha      |
+    | Caracas | 08-11-2012 |
+    | Mérida  | 10-11-2012 |
   Cuando estoy en la página de inicio
   Entonces debo ver el evento "Caracas" con fecha "8 de Noviembre de 2012"
   Y debo ver el evento "Mérida" con fecha "10 de Noviembre de 2012"
